@@ -1,0 +1,12 @@
+diff --git a/data/asusd.service b/data/asusd.service
+index 9f0ee84..6c9b4e5 100644
+--- a/data/asusd.service
++++ b/data/asusd.service
+@@ -7,6 +7,7 @@ Before=multi-user.target
+ [Service]
+ Environment=IS_SERVICE=1
+ ExecStartPre=/bin/sleep 2
++StateDirectory=asusd
+ ExecStart=/usr/bin/asusd
+ Restart=on-failure
+ Restart=always
