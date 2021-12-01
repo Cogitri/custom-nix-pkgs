@@ -6,7 +6,7 @@
 # commands such as:
 #     nix-build -A mypackage
 
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> {}, ... }:
 let
   callPackage = pkgs.callPackage;
   stdenv = pkgs.stdenv;
