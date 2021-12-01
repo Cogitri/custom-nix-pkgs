@@ -12,6 +12,7 @@ let
   stdenv = pkgs.stdenv;
 
   supergfxctl_pkg = pkgs.callPackage ./pkgs/supergfxctl { };
+  asusctl_pkg = pkgs.callPackage ./pkgs/asusctl { };
 
 in rec {
   # The `lib`, `modules`, and `overlay` names are special
@@ -19,5 +20,6 @@ in rec {
   modules = import ./modules; # NixOS modules
 
   supergfxctl = supergfxctl_pkg;
+  asusctl = asusctl_pkg;
 }
 
