@@ -14,21 +14,16 @@ rustPlatform.buildRustPackage rec {
   patches = [
     ./configdir.patch
     ./statedir.patch
+    ./ca463a294424f1e8cecea5818b8dc9022e4f3028.patch
   ];
 
   postPatch = ''
     substituteInPlace daemon/src/laptops.rs \
       --replace /etc $out/etc
 
-    for file in daemon/src/*.rs; do
+    for file in  daemon/src/*.rs daemon/src/**/*.rs; do
       substituteInPlace $file \
         --replace \"/etc \"/var/lib \
-        --replace /usr $out
-    done
-
-    for file in daemon/src/**/*.rs; do
-      substituteInPlace $file \
-        --replace /etc /var/lib \
         --replace /usr $out
     done
 
