@@ -50,5 +50,6 @@ in
     services.dbus.packages = with pkgs; [ supergfxctl ];
     services.udev.packages = with pkgs; [ supergfxctl ];
     systemd.packages = with pkgs; [ supergfxctl ];
+    environment.etc."supergfxd.conf".source = configFile;
   };
 }
