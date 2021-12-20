@@ -1,4 +1,4 @@
-{ lib, rustPlatform, fetchFromGitLab, pkg-config, udev }:
+{ lib, rustPlatform, fetchFromGitLab, pkg-config, udev, kmod }:
 
 rustPlatform.buildRustPackage rec {
   pname = "supergfxctl";
@@ -14,6 +14,10 @@ rustPlatform.buildRustPackage rec {
   postPatch = ''
     substituteInPlace data/supergfxd.service \
       --replace /usr/bin $out/bin
+
+    substituteInPlace src/controller.rs \
+      --replace \"modprobe\" \"${kmod}/bin/modprobe\" \
+      --replace \"rmmod\" \"${kmod}/bin/rmmod\"
   '';
 
   nativeBuildInputs = [ pkg-config ];
