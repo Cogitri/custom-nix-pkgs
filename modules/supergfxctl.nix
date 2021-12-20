@@ -9,6 +9,7 @@ let
     gfx_managed = cfg.gfx-managed;
     gfx_vfio_enabled = cfg.gfx-vfio-enable;
   }));
+in
 {
   ###### interface
 
