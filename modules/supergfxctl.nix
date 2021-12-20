@@ -4,13 +4,11 @@ with lib;
 
 let
   cfg = config.services.supergfxctl;
-  configFile = pkgs.writeText "supergfxd.conf" ''
-    {
-      "gfx_mode": "${cfg.gfx-mode}",
-      "gfx_managed": ${cfg.gfx-managed},
-      "gfx_vfio_enable": ${cfg.gfx-vfio-enable}
-    }
-  '';
+  configFile = pkgs.writeText "supergfxd.conf" (builtins.toJSON ({
+    gfx_mode = cfg.gfx-mode;
+    gfx_managed = cfg.gfx-managed;
+    gfx_vfio_enabled = cfg.gfx-vfio-enable;
+  });
 {
   ###### interface
 
