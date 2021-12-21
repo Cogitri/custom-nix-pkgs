@@ -1,0 +1,23 @@
+diff --git a/src/config.rs b/src/config.rs
+index 1967d2d..1b13067 100644
+--- a/src/config.rs
++++ b/src/config.rs
+@@ -35,7 +35,6 @@ impl GfxConfig {
+     pub fn load(config_path: String) -> Self {
+         let mut file = OpenOptions::new()
+             .read(true)
+-            .write(true)
+             .create(true)
+             .open(&config_path)
+             .unwrap_or_else(|_| panic!("The directory {} is missing", config_path)); // okay to cause panic here
+@@ -78,9 +77,6 @@ impl GfxConfig {
+     }
+ 
+     pub fn write(&self) {
+-        let mut file = File::create(&self.config_path).expect("Couldn't overwrite config");
+-        let json = serde_json::to_string_pretty(self).expect("Parse config to JSON failed");
+-        file.write_all(json.as_bytes())
+-            .unwrap_or_else(|err| error!("Could not write config: {}", err));
++        println!("Won't write config since it's managed by nix.")
+     }
+ }

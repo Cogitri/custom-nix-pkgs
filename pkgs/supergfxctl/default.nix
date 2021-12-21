@@ -11,6 +11,10 @@ rustPlatform.buildRustPackage rec {
     sha256 = "1rnpfaxbsa88lm10fl81pm1rrp7hshfzylb3apw81bs9nms37h56";
   };
 
+  patches = [
+    ./no-config-write.patch
+  ];
+
   postPatch = ''
     substituteInPlace data/supergfxd.service \
       --replace /usr/bin $out/bin
