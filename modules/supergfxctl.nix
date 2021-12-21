@@ -7,7 +7,7 @@ let
   configFile = pkgs.writeText "supergfxd.conf" (builtins.toJSON ({
     gfx_mode = cfg.gfx-mode;
     gfx_managed = cfg.gfx-managed;
-    gfx_vfio_enabled = cfg.gfx-vfio-enable;
+    gfx_vfio_enable = cfg.gfx-vfio-enable;
   }));
 in
 {
