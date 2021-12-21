@@ -1,16 +1,17 @@
 diff --git a/src/config.rs b/src/config.rs
-index 1967d2d..1b13067 100644
+index 1967d2d..de045de 100644
 --- a/src/config.rs
 +++ b/src/config.rs
-@@ -35,7 +35,6 @@ impl GfxConfig {
+@@ -35,8 +35,6 @@ impl GfxConfig {
      pub fn load(config_path: String) -> Self {
          let mut file = OpenOptions::new()
              .read(true)
 -            .write(true)
-             .create(true)
+-            .create(true)
              .open(&config_path)
              .unwrap_or_else(|_| panic!("The directory {} is missing", config_path)); // okay to cause panic here
-@@ -78,9 +77,6 @@ impl GfxConfig {
+         let mut buf = String::new();
+@@ -78,9 +76,6 @@ impl GfxConfig {
      }
  
      pub fn write(&self) {
