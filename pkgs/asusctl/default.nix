@@ -28,8 +28,6 @@ rustPlatform.buildRustPackage rec {
 
     for file in data/*.service; do
       substituteInPlace $file \
-        --replace /usr/bin/sleep ${coreutils}/bin/sleep \
-        --replace /bin/sleep ${coreutils}/bin/sleep \
         --replace /bin/mkdir ${coreutils}/bin/mkdir \
         --replace /usr/bin $out/bin
     done
