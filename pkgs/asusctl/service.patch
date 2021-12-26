@@ -49,7 +49,7 @@ index 9f0ee84..004d6f1 100644
  Environment=IS_SERVICE=1
 -ExecStartPre=/bin/sleep 2
  ExecStart=/usr/bin/asusd
-+StateDir=asusd
++StateDirectory=asusd
  Restart=on-failure
  Restart=always
  RestartSec=1
