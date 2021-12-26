@@ -2,13 +2,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "supergfxctl";
-  version = "2.0.4";
+  version = "2.0.5";
 
   src = fetchFromGitLab {
     owner = "asus-linux";
     repo = pname;
     rev = version;
-    sha256 = "1rnpfaxbsa88lm10fl81pm1rrp7hshfzylb3apw81bs9nms37h56";
+    sha256 = "0qb7ysvbdk0jl26z5z887wf6zq0bsz3991hk2jbp4cxbifd2j8ph";
   };
 
   patches = [
