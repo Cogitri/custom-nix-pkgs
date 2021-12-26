@@ -14,6 +14,7 @@ rustPlatform.buildRustPackage rec {
   patches = [
     ./configdir.patch
     ./statedir.patch
+    ./service.patch
   ];
 
   postPatch = ''
@@ -36,9 +37,6 @@ rustPlatform.buildRustPackage rec {
 
     substituteInPlace data/asusd.rules \
       --replace systemctl ${systemd}/bin/systemctl
-
-    echo "After=supergfxd.service\nRequires=supergfx.d.service" \
-        >> data/asusd.service
   '';
 
   nativeBuildInputs = [ pkg-config ];
