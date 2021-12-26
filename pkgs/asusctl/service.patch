@@ -50,7 +50,7 @@ index 9f0ee84..93f9f48 100644
 -ExecStartPre=/bin/sleep 2
  ExecStart=/usr/bin/asusd
 -Restart=on-failure
-+StateDir=asusd
++StateDirectory=asusd
  Restart=always
 -RestartSec=1
 -Type=dbus
