@@ -35,10 +35,10 @@ index ba84517..c970537 100644
 \ No newline at end of file
 +WantedBy=default.target
 diff --git a/data/asusd.service b/data/asusd.service
-index 9f0ee84..b90e0df 100644
+index 9f0ee84..93f9f48 100644
 --- a/data/asusd.service
 +++ b/data/asusd.service
-@@ -3,15 +3,17 @@ Description=ASUS Notebook Control
+@@ -3,15 +3,16 @@ Description=ASUS Notebook Control
  StartLimitInterval=200
  StartLimitBurst=2
  Before=multi-user.target
@@ -53,12 +53,13 @@ index 9f0ee84..b90e0df 100644
 +StateDir=asusd
  Restart=always
 -RestartSec=1
-+RestartSec=3
- Type=dbus
- BusName=org.asuslinux.Daemon
+-Type=dbus
+-BusName=org.asuslinux.Daemon
 -SELinuxContext=system_u:system_r:unconfined_t:s0
 -#SELinuxContext=system_u:object_r:modules_object_t:s0
 \ No newline at end of file
++RestartSec=3
++Type=simple
 +
 +[Install]
 +WantedBy=multi-user.target
