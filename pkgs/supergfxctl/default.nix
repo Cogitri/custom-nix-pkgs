@@ -27,7 +27,7 @@ rustPlatform.buildRustPackage rec {
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [ udev ];
 
-  cargoHash = "sha256-bFfO6UAje+Wmcfi85IGgzK0GmE16dJxb8xDlcFHrX+W=";
+  cargoHash = "sha256-qT6XRcfx9Zu0PnBxeTeqKv+PiX6tXJpJBdhSr7TjtXk=";
 
   makeFlags = [ "prefix=${placeholder "out"}" ];
   # Use default phases since the build scripts install systemd services and udev rules too
