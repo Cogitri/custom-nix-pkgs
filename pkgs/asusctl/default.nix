@@ -13,7 +13,6 @@ rustPlatform.buildRustPackage rec {
 
   patches = [
     ./configdir.patch
-    ./statedir.patch
     ./service.patch
   ];
 

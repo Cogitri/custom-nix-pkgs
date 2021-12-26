@@ -16,10 +16,4 @@ index 9f0ee84..66add89 100644
  ExecStart=/usr/bin/asusd
  Restart=on-failure
  Restart=always
-@@ -14,4 +17,4 @@ RestartSec=1
- Type=dbus
- BusName=org.asuslinux.Daemon
- SELinuxContext=system_u:system_r:unconfined_t:s0
--#SELinuxContext=system_u:object_r:modules_object_t:s0
-\ No newline at end of file
-+#SELinuxContext=system_u:object_r:modules_object_t:s0
+ 
