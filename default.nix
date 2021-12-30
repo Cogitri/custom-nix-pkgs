@@ -22,6 +22,6 @@ in rec {
 
   supergfxctl = supergfxctl_pkg;
   asusctl = asusctl_pkg;
-  gnome-texxt-editor = gnome_text_editor_pkg;
+  gnome-text-editor = gnome_text_editor_pkg;
 }
 
