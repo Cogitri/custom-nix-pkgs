@@ -13,6 +13,7 @@ let
 
   supergfxctl_pkg = pkgs.callPackage ./pkgs/supergfxctl { };
   asusctl_pkg = pkgs.callPackage ./pkgs/asusctl { };
+  gnome_text_editor_pkg = pkgs.callPackage ./pkgs/gnome-text-editor { };
 
 in rec {
   # The `lib`, `modules`, and `overlay` names are special
@@ -21,5 +22,6 @@ in rec {
 
   supergfxctl = supergfxctl_pkg;
   asusctl = asusctl_pkg;
+  gnome-texxt-editor = gnome_text_editor_pkg;
 }
 
