@@ -1,45 +1,12 @@
-diff --git a/data/asus-notify.service b/data/asus-notify.service
-index 076c8c4..0cecac7 100644
---- a/data/asus-notify.service
-+++ b/data/asus-notify.service
-@@ -4,11 +4,10 @@ StartLimitInterval=200
- StartLimitBurst=2
- 
- [Service]
--ExecStartPre=/usr/bin/sleep 2
- ExecStart=/usr/bin/asus-notify
- Restart=on-failure
- RestartSec=1
- Type=simple
- 
- [Install]
--WantedBy=default.target
-\ No newline at end of file
-+WantedBy=default.target
-diff --git a/data/asusd-user.service b/data/asusd-user.service
-index ba84517..c970537 100644
---- a/data/asusd-user.service
-+++ b/data/asusd-user.service
-@@ -4,11 +4,10 @@ StartLimitInterval=200
- StartLimitBurst=2
- 
- [Service]
--ExecStartPre=/usr/bin/sleep 2
- ExecStart=/usr/bin/asusd-user
- Restart=on-failure
- RestartSec=1
- Type=simple
- 
- [Install]
--WantedBy=default.target
-\ No newline at end of file
-+WantedBy=default.target
 diff --git a/data/asusd.service b/data/asusd.service
-index 9f0ee84..93f9f48 100644
+index 9f0ee84..66add89 100644
 --- a/data/asusd.service
 +++ b/data/asusd.service
-@@ -3,15 +3,16 @@ Description=ASUS Notebook Control
- StartLimitInterval=200
+@@ -1,16 +1,18 @@
+ [Unit]
+ Description=ASUS Notebook Control
+-StartLimitInterval=200
++StartLimitInterval=0
  StartLimitBurst=2
  Before=multi-user.target
 +After=supergfxd.service
@@ -49,17 +16,12 @@ index 9f0ee84..93f9f48 100644
  Environment=IS_SERVICE=1
 -ExecStartPre=/bin/sleep 2
  ExecStart=/usr/bin/asusd
--Restart=on-failure
 +StateDirectory=asusd
+ Restart=on-failure
  Restart=always
 -RestartSec=1
--Type=dbus
--BusName=org.asuslinux.Daemon
--SELinuxContext=system_u:system_r:unconfined_t:s0
--#SELinuxContext=system_u:object_r:modules_object_t:s0
-\ No newline at end of file
-+RestartSec=3
-+Type=simple
++RestartSec=4
+ Type=dbus
+ BusName=org.asuslinux.Daemon
+ SELinuxContext=system_u:system_r:unconfined_t:s0
 +
-+[Install]
-+WantedBy=multi-user.target
